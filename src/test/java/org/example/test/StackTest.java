@@ -71,4 +71,26 @@ class StackTest {
         System.out.println("Tamaño de la pila: " + stack.size());
     }
 
+    @Test
+    public void seApilanDosElementoYSeDesapiilaYSeVerificaQueEstaEstaVaciaYDevuelvaTrue() {
+        // Arrange
+        Producto pera = new Producto("Pera");
+        Producto naranja = new Producto("Naranja");
+
+
+        Stack stack = new Stack();
+        stack.push(pera);
+        stack.push(naranja);
+        System.out.println("Pila tamaño: "+ stack.size());
+
+        // Act
+        stack.pop();
+        stack.pop();
+        System.out.println("Pila tamaño: "+stack.size());
+        boolean resultado = stack.isEmpty();
+
+        // Assert
+        assertTrue(resultado);
+    }
+
 }

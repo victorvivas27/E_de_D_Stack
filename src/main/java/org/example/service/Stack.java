@@ -22,7 +22,13 @@ public class Stack<T> implements IStack<T> {
 
     @Override
     public T pop() {
-        return null;
+        if (node == null) {
+            throw new IllegalStateException("La pila está vacía");
+        }
+        T dato = node.getData();
+        node = node.getNextNode();
+        tamaño--;
+        return dato;
     }
 
     @Override
