@@ -4,6 +4,9 @@ import org.example.service.Producto;
 import org.example.service.Stack;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackTest {
@@ -123,6 +126,27 @@ class StackTest {
 
         // Assert
         assertEquals(pera, resultado, "El último elemento apilado debería ser 'pera'");
+    }
+    @Test
+    public void seApilaDosElementosYDebeImprimirLaListaDeLaPila() {
+        // Arrange
+        Producto pera = new Producto("Pera");
+        Producto naranja = new Producto("Naranja");
+        Stack<Producto> stack = new Stack<>();
+        stack.push(naranja);
+        stack.push(pera);
+
+        // Capturar la salida de System.out
+        ByteArrayOutputStream salidaConsola = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(salidaConsola));
+
+
+        // Act
+        stack.printStack();
+
+        // Assert
+        assertEquals("Pera -> Naranja\n", salidaConsola.toString(), "La salida de la pila debería ser 'Pera -> Naranja'");
+        
     }
 
 

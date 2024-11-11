@@ -48,4 +48,17 @@ public class Stack<T> implements IStack<T> {
         }
         return node.getData();
     }
+
+    @Override
+    public void printStack() {
+        Node<T> current = node;
+        while (current != null) {
+            System.out.print(current.getData());
+            if (current.getNextNode() != null) {
+                System.out.print(" -> ");
+            }
+            current = current.getNextNode();
+        }
+        System.out.println(); // Salto de línea al final
+    }
 }
