@@ -1,5 +1,6 @@
 package org.example.test;
 
+import org.example.service.Producto;
 import org.example.service.Stack;
 import org.junit.jupiter.api.Test;
 
@@ -34,4 +35,19 @@ class StackTest {
         // Assert
         assertEquals(0, tamaño, "El tamaño de una pila nueva debería ser cero");
     }
+    @Test
+    public void seApilaUnElementoYSeVerificaQueEstaNoEstaVaciaYDevuelvaFalse(){
+        // Arrange
+        Producto pera = new Producto("Pera");
+
+        Stack stack = new Stack();
+        stack.push(pera);
+
+        // Act
+        boolean resultado = stack.isEmpty();
+
+        // Assert
+        assertFalse(resultado);
+    }
+
 }

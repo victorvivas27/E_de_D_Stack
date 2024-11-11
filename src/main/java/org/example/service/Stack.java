@@ -2,21 +2,26 @@ package org.example.service;
 
 import org.example.stackinterface.IStack;
 
-public class Stack <T> implements IStack {
+public class Stack <T> implements IStack <T>{
     private  Node<T>node;
     private int tamaño;
 
     public Stack() {
         this.tamaño =0;
     }
-
     @Override
-    public void push(Object tipo) {
-
+    public boolean push(T t) {
+        Node<T> nuevoNode = new Node<T>(t);
+        nuevoNode.setNextNode(node);
+        node = nuevoNode;
+        tamaño++;
+        return true;
     }
 
+
+
     @Override
-    public Object pop() {
+    public T pop() {
         return null;
     }
 
@@ -31,7 +36,7 @@ public class Stack <T> implements IStack {
     }
 
     @Override
-    public Object peek() {
+    public T peek() {
         return null;
     }
 }

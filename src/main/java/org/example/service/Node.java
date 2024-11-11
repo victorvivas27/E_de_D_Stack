@@ -1,23 +1,23 @@
 package org.example.service;
 
-public class Node <E>{
-    private E data;
-    private Node<E> nextNode;
+public class Node <T>{
+    private T data;
+    private Node<T> nextNode;
 
-    public Node(E data) {
+    public Node(T data) {
         this.data = data;
         this.nextNode = null;
     }
 
-    public Node<E> getNextNode() {
+    public Node<T> getNextNode() {
         return nextNode;
     }
 
-    public void setNextNode(Node<E> nextNode) {
+    public void setNextNode(Node<T> nextNode) {
         this.nextNode = nextNode;
     }
 
-    public E getData() {
+    public T getData() {
         return data;
     }
 
