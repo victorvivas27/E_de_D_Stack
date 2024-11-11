@@ -1,4 +1,32 @@
 package org.example.service;
 
-public class Stack {
+import org.example.stackinterface.IStack;
+
+public class Stack <T> implements IStack {
+    private  Node<T>node;
+
+    @Override
+    public void push(Object tipo) {
+
+    }
+
+    @Override
+    public Object pop() {
+        return null;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return node == null;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public Object peek() {
+        return null;
+    }
 }
