@@ -23,4 +23,15 @@ class StackTest {
         //Assert
        assertTrue(resultado);
     }
+    @Test
+    public void nuevaPilaSeVerificaElTamañoDebeDevolverCero() {
+        // Arrange
+        Stack stack = new Stack();
+
+        // Act
+        int tamaño = stack.size();
+
+        // Assert
+        assertEquals(0, tamaño, "El tamaño de una pila nueva debería ser cero");
+    }
 }

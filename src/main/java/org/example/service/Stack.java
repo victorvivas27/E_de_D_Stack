@@ -4,6 +4,11 @@ import org.example.stackinterface.IStack;
 
 public class Stack <T> implements IStack {
     private  Node<T>node;
+    private int tamaño;
+
+    public Stack() {
+        this.tamaño =0;
+    }
 
     @Override
     public void push(Object tipo) {
@@ -22,7 +27,7 @@ public class Stack <T> implements IStack {
 
     @Override
     public int size() {
-        return 0;
+        return tamaño;
     }
 
     @Override
