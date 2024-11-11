@@ -2,13 +2,14 @@ package org.example.service;
 
 import org.example.stackinterface.IStack;
 
-public class Stack <T> implements IStack <T>{
-    private  Node<T>node;
+public class Stack<T> implements IStack<T> {
+    private Node<T> node;
     private int tamaño;
 
     public Stack() {
-        this.tamaño =0;
+        this.tamaño = 0;
     }
+
     @Override
     public boolean push(T t) {
         Node<T> nuevoNode = new Node<T>(t);
@@ -17,7 +18,6 @@ public class Stack <T> implements IStack <T>{
         tamaño++;
         return true;
     }
-
 
 
     @Override
