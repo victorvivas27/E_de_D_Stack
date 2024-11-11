@@ -109,5 +109,21 @@ class StackTest {
         // Assert
         assertFalse(resultado);
     }
+    @Test
+    public void seApilaDosElementosYSeExtraeElUltimoElementoApilado() {
+        // Arrange
+        Producto pera = new Producto("Pera");
+        Producto naranja = new Producto("Naranja");
+        Stack<Producto> stack = new Stack<>();
+        stack.push(naranja);
+        stack.push(pera);
+
+        // Act
+        Producto resultado = stack.pop();
+
+        // Assert
+        assertEquals(pera, resultado, "El último elemento apilado debería ser 'pera'");
+    }
+
 
 }

@@ -43,6 +43,9 @@ public class Stack<T> implements IStack<T> {
 
     @Override
     public T peek() {
-        return null;
+        if (node == null) {
+            throw new IllegalStateException("La pila está vacía");
+        }
+        return node.getData();
     }
 }
