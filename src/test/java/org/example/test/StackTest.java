@@ -81,16 +81,33 @@ class StackTest {
         Stack stack = new Stack();
         stack.push(pera);
         stack.push(naranja);
-        System.out.println("Pila tamaño: "+ stack.size());
+        System.out.println("Pila tamaño: " + stack.size());
 
         // Act
         stack.pop();
         stack.pop();
-        System.out.println("Pila tamaño: "+stack.size());
+        System.out.println("Pila tamaño: " + stack.size());
         boolean resultado = stack.isEmpty();
 
         // Assert
         assertTrue(resultado);
+    }
+
+    @Test
+    public void seApilaDosElementoYSeDesapilaUnoSeVerificaSiEstaVaciaLaPilaDebeDevolverFalse() {
+        // Arrange
+        Producto pera = new Producto("Pera");
+        Producto naranja = new Producto("Naranja");
+        Stack stack = new Stack();
+        stack.push(pera);
+        stack.push(naranja);
+
+        // Act
+        stack.pop();
+        boolean resultado = stack.isEmpty();
+
+        // Assert
+        assertFalse(resultado);
     }
 
 }
